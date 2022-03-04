@@ -10,7 +10,8 @@ namespace servicioSocial
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new NavigationPage(new MainPage());
+            MainPage.BackgroundColor = Color.White;
         }
 
         protected override void OnStart()

@@ -3,10 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="servicioSocial.DispositivosBluetoothView">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout Padding="20" BackgroundColor="#393e41" Spacing="40">
+            <Label Text="Dispositivos Disponibles"
+                FontSize="24" 
+                HorizontalOptions="CenterAndExpand" TextColor="#f6f7eb" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

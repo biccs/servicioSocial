@@ -20,13 +20,12 @@ namespace servicioSocial
 
         async void BluetoothPage(object sender, EventArgs e)
         {
-            await DisplayAlert("HOLA MUNDO", "QUE SHOW", "TODO BIEN");
-            await Shell.Current.GoToAsync(nameof(DispositivosBluetoothView));
+            await Navigation.PushAsync(new DispositivosBluetoothView());
         }
 
         async void PropertiesButton(object sender, EventArgs e)
         {
-            await Shell.Current.GoToAsync(nameof(EquiposView));
+            await Navigation.PushAsync(new EquiposView());
         }
 
     }

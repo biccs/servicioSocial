@@ -3,10 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="servicioSocial.EquiposView">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
+        <StackLayout Padding="20" BackgroundColor="#393e41" Spacing="40">
+            <Label Text="Equipos"
                 VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+                HorizontalOptions="CenterAndExpand" TextColor="#f6f7eb" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -3,32 +3,34 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="servicioSocial.MainPage">
     <ContentPage.Content>
-        <StackLayout Padding="20" BackgroundColor="#393e41" Spacing="40">
-            <StackLayout Spacing="15">
-                <Button Text="Sin Conexion" Clicked="BluetoothPage" TextColor="#f6f7eb" BorderWidth="2.5" BorderColor="#f6f7eb" BackgroundColor="#393e41"/>
-                <Button Text="Propiedades" Clicked="PropertiesButton"  TextColor="#f6f7eb" BorderWidth="2.5" BorderColor="#f6f7eb" BackgroundColor="#393e41"/>
-            </StackLayout>
-            <Grid BackgroundColor="#f6f7eb" RowSpacing="10" Padding="2" >
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                </Grid.RowDefinitions>
-                <Label Grid.Row="0" Grid.Column="0" Text="Amplitud" FontSize="18" TextColor="#231f20" VerticalOptions="Center" HorizontalOptions="CenterAndExpand"/>
-                <Label Grid.Row="1" Grid.Column="0" Text="Temperatura" FontSize="18" TextColor="#231f20" VerticalOptions="Center" HorizontalOptions="Center"/>
-                <Label Grid.Row="0" Grid.Column="1" Text="0" FontSize="18" TextColor="#2ca58d" VerticalOptions="Center" HorizontalOptions="Center"/>
-                <Label Grid.Row="1" Grid.Column="1" Text="0" FontSize="18" TextColor="#f97068" VerticalOptions="Center" HorizontalOptions="Center"/>
-                <Label Grid.Row="0" Grid.Column="2" Text="MM/SEG" FontSize="18" TextColor="#231f20" VerticalOptions="Center" HorizontalOptions="Center"/>
-                <Label Grid.Row="1" Grid.Column="2" Text="°C" FontSize="18" TextColor="#231f20" VerticalOptions="Center" HorizontalOptions="Center"/>
-            </Grid>
-            <Label Text="Rango ISO10816 -3" TextColor="#f6f7eb" FontSize="18" HorizontalTextAlignment="Center"/>
-            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-                <Button Text="Conectar" TextColor="#f6f7eb" BorderWidth="2.5" BorderColor="#f6f7eb" BackgroundColor="#393e41"/>
-                <Button Text="Desconectar"  TextColor="#f6f7eb" BorderWidth="2.5" BorderColor="#f6f7eb" BackgroundColor="#393e41"/>
+        <StackLayout BackgroundColor="#393e41">
+            <StackLayout Padding="20" BackgroundColor="#393e41" Spacing="40" VerticalOptions="CenterAndExpand">
+                <StackLayout Spacing="15">
+                    <Button Text="Sin Conexion" Clicked="BluetoothPage" TextColor="#f6f7eb" BorderWidth="2.5" BorderColor="#f6f7eb" BackgroundColor="#393e41"/>
+                    <Button Text="Propiedades" Clicked="PropertiesButton"  TextColor="#f6f7eb" BorderWidth="2.5" BorderColor="#f6f7eb" BackgroundColor="#393e41"/>
+                </StackLayout>
+                <Grid BackgroundColor="#f6f7eb" RowSpacing="10" Padding="2" >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Label Grid.Row="0" Grid.Column="0" Text="Amplitud" FontSize="18" TextColor="#231f20" VerticalOptions="Center" HorizontalOptions="CenterAndExpand"/>
+                    <Label Grid.Row="1" Grid.Column="0" Text="Temperatura" FontSize="18" TextColor="#231f20" VerticalOptions="Center" HorizontalOptions="Center"/>
+                    <Label Grid.Row="0" Grid.Column="1" Text="0" FontSize="18" TextColor="#2ca58d" VerticalOptions="Center" HorizontalOptions="Center"/>
+                    <Label Grid.Row="1" Grid.Column="1" Text="0" FontSize="18" TextColor="#f97068" VerticalOptions="Center" HorizontalOptions="Center"/>
+                    <Label Grid.Row="0" Grid.Column="2" Text="MM/SEG" FontSize="18" TextColor="#231f20" VerticalOptions="Center" HorizontalOptions="Center"/>
+                    <Label Grid.Row="1" Grid.Column="2" Text="°C" FontSize="18" TextColor="#231f20" VerticalOptions="Center" HorizontalOptions="Center"/>
+                </Grid>
+                <Label Text="Rango ISO10816 -3" TextColor="#f6f7eb" FontSize="18" HorizontalTextAlignment="Center"/>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                    <Button Text="Conectar" TextColor="#f6f7eb" BorderWidth="2.5" BorderColor="#f6f7eb" BackgroundColor="#393e41"/>
+                    <Button Text="Desconectar"  TextColor="#f6f7eb" BorderWidth="2.5" BorderColor="#f6f7eb" BackgroundColor="#393e41"/>
+                </StackLayout>
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>
