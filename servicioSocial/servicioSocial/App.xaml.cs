@@ -11,7 +11,16 @@ namespace servicioSocial
             InitializeComponent();
 
             MainPage = new NavigationPage(new MainPage());
-            MainPage.BackgroundColor = Color.White;
+            MainPage.BackgroundColor = Color.DarkGray;
+
+            //Frame frame = new Frame
+            //{
+            //    BorderColor = Color.Orange,
+            //    CornerRadius = 10,
+            //    HasShadow = true,
+            //    Content = MainPage,
+            //};
+
         }
 
         protected override void OnStart()

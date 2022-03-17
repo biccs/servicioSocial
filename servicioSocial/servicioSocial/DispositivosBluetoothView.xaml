@@ -1,12 +1,24 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="servicioSocial.DispositivosBluetoothView">
+             x:Class="servicioSocial.DispositivosBluetoothView"
+             Title="Conexion Bluetooth">
     <ContentPage.Content>
         <StackLayout Padding="20" BackgroundColor="#393e41" Spacing="40">
-            <Label Text="Dispositivos Disponibles"
-                FontSize="24" 
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <Label Text="Dispositivos Disponibles"
+                FontSize="22" 
                 HorizontalOptions="CenterAndExpand" TextColor="#f6f7eb" />
+                <Frame BorderColor="#2ca58d"  BackgroundColor="#2ca58d" Padding="1" CornerRadius="10">
+                    <ImageButton Source="refreshload.png" BackgroundColor="#2ca58d"
+            HeightRequest="40" WidthRequest="50" CornerRadius="10"></ImageButton>
+                </Frame>
+            </StackLayout>
+            <Frame BorderColor="#f6f7eb" BackgroundColor="#f6f7eb" HeightRequest="450" CornerRadius="10" Padding="10">
+                <BoxView Color="#393e41" CornerRadius="10">
+                    
+                </BoxView>
+            </Frame>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

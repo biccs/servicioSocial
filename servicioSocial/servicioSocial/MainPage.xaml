@@ -1,15 +1,25 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="servicioSocial.MainPage">
+             x:Class="servicioSocial.MainPage"
+             Title="Inicio">
     <ContentPage.Content>
         <StackLayout BackgroundColor="#393e41">
-            <StackLayout Padding="20" BackgroundColor="#393e41" Spacing="40" VerticalOptions="CenterAndExpand">
+            <StackLayout Padding="20" BackgroundColor="#393e41" Spacing="50" VerticalOptions="CenterAndExpand">
                 <StackLayout Spacing="15">
-                    <Button Text="Sin Conexion" Clicked="BluetoothPage" TextColor="#f6f7eb" BorderWidth="2.5" BorderColor="#f6f7eb" BackgroundColor="#393e41"/>
-                    <Button Text="Propiedades" Clicked="PropertiesButton"  TextColor="#f6f7eb" BorderWidth="2.5" BorderColor="#f6f7eb" BackgroundColor="#393e41"/>
+                    <Frame Padding="4" CornerRadius="10" Background="#f6f7eb">
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="Center" BackgroundColor="#393e41" Padding="10">
+                            <Label Text="Desconectado" FontSize="20" TextColor="#f6f7eb" BackgroundColor="#393e41" Padding="1" VerticalOptions="Center"></Label>
+                            <ImageButton Source="cancel.png" BackgroundColor="#393e41" HeightRequest="40" WidthRequest="50" CornerRadius="10" Padding="10"></ImageButton>
+                        </StackLayout>
+                    </Frame>
+                    <Frame Padding="1" CornerRadius="10">
+                        <Button Text="Propiedades" Clicked="PropertiesButton"  TextColor="#f6f7eb" BorderWidth="2.5" BorderColor="#f6f7eb" BackgroundColor="#393e41" Padding="1" CornerRadius="10"/>
+                    </Frame>
+                    
                 </StackLayout>
-                <Grid BackgroundColor="#f6f7eb" RowSpacing="10" Padding="2" >
+                <Frame Padding="1" CornerRadius="10" BackgroundColor="#f6f7eb">
+                    <Grid BackgroundColor="#f6f7eb" RowSpacing="10" Padding="2">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
                         <ColumnDefinition/>
@@ -19,18 +29,26 @@
                         <RowDefinition/>
                         <RowDefinition/>
                     </Grid.RowDefinitions>
-                    <Label Grid.Row="0" Grid.Column="0" Text="Amplitud" FontSize="18" TextColor="#231f20" VerticalOptions="Center" HorizontalOptions="CenterAndExpand"/>
-                    <Label Grid.Row="1" Grid.Column="0" Text="Temperatura" FontSize="18" TextColor="#231f20" VerticalOptions="Center" HorizontalOptions="Center"/>
+                    <Label Grid.Row="0" Grid.Column="0" Text="Amplitud" FontSize="18" TextColor="#231f20" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" />
+                    <Label Grid.Row="1" Grid.Column="0" Text="Temperatura" FontSize="16" TextColor="#231f20" VerticalOptions="Center" HorizontalOptions="Center"/>
                     <Label Grid.Row="0" Grid.Column="1" Text="0" FontSize="18" TextColor="#2ca58d" VerticalOptions="Center" HorizontalOptions="Center"/>
                     <Label Grid.Row="1" Grid.Column="1" Text="0" FontSize="18" TextColor="#f97068" VerticalOptions="Center" HorizontalOptions="Center"/>
                     <Label Grid.Row="0" Grid.Column="2" Text="MM/SEG" FontSize="18" TextColor="#231f20" VerticalOptions="Center" HorizontalOptions="Center"/>
                     <Label Grid.Row="1" Grid.Column="2" Text="°C" FontSize="18" TextColor="#231f20" VerticalOptions="Center" HorizontalOptions="Center"/>
                 </Grid>
+                </Frame >
+                
                 <Label Text="Rango ISO10816 -3" TextColor="#f6f7eb" FontSize="18" HorizontalTextAlignment="Center"/>
                 <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-                    <Button Text="Conectar" TextColor="#f6f7eb" BorderWidth="2.5" BorderColor="#f6f7eb" BackgroundColor="#393e41"/>
-                    <Button Text="Desconectar"  TextColor="#f6f7eb" BorderWidth="2.5" BorderColor="#f6f7eb" BackgroundColor="#393e41"/>
+                    <Button FontSize="12" Text="Conectar" Clicked="BluetoothPage" TextColor="#f6f7eb" BorderWidth="2.5" BorderColor="#f6f7eb" BackgroundColor="#393e41" Padding="1" CornerRadius="10"/>
+                    <Button FontSize="11" Text="Desconectar"  TextColor="#f6f7eb" BorderWidth="2.5" BorderColor="#f6f7eb" BackgroundColor="#393e41" Padding="1" CornerRadius="10"/>
                 </StackLayout>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                    <Frame Padding="5" CornerRadius="10" BackgroundColor="#f6f7eb" WidthRequest="100">
+                    <ImageButton Source="chart.png" HeightRequest="60" WidthRequest="100" BackgroundColor="#393e41" CornerRadius="10" Padding="5"></ImageButton>
+                </Frame>
+                </StackLayout>
+                
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>
