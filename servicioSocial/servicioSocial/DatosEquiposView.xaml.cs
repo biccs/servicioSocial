@@ -1,4 +1,5 @@
-﻿using System;
+﻿using servicioSocial.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,9 +13,12 @@ namespace servicioSocial
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class DatosEquiposView : ContentPage
     {
-        public DatosEquiposView()
+        private Equipo equipo;
+
+        public DatosEquiposView(Equipo equipo)
         {
             InitializeComponent();
+            this.equipo = equipo;
         }
     }
 }

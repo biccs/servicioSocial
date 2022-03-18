@@ -10,14 +10,14 @@
                 FontSize="22" 
                 HorizontalOptions="CenterAndExpand" TextColor="#f6f7eb" />
                 <Frame BorderColor="#2ca58d"  BackgroundColor="#2ca58d" Padding="1" CornerRadius="10">
-                    <ImageButton Source="refreshload.png" BackgroundColor="#2ca58d"
-            HeightRequest="40" WidthRequest="50" CornerRadius="10"></ImageButton>
+                    <ImageButton  Source="refreshload.png" BackgroundColor="#2ca58d"
+            HeightRequest="40" WidthRequest="50" CornerRadius="10" Clicked="searchDevices"></ImageButton>
                 </Frame>
             </StackLayout>
             <Frame BorderColor="#f6f7eb" BackgroundColor="#f6f7eb" HeightRequest="450" CornerRadius="10" Padding="10">
-                <BoxView Color="#393e41" CornerRadius="10">
+                <StackLayout x:Name="dispositivosBluetoothContainer" BackgroundColor="#f6f7eb">
                     
-                </BoxView>
+                </StackLayout>
             </Frame>
         </StackLayout>
     </ContentPage.Content>

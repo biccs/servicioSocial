@@ -10,13 +10,15 @@
                 HorizontalOptions="CenterAndExpand" TextColor="#f6f7eb" />
                 <Frame BorderColor="#2ca58d"  BackgroundColor="#2ca58d" Padding="1" CornerRadius="10">
                     <ImageButton Source="saveicon.png" BackgroundColor="#2ca58d"
-            HeightRequest="40" WidthRequest="50" CornerRadius="10" Padding="5"></ImageButton>
+            HeightRequest="40" WidthRequest="50" CornerRadius="10" Padding="5" Clicked="AddDevice"></ImageButton>
                 </Frame>
             </StackLayout>
             <Frame BorderColor="#f6f7eb" BackgroundColor="#f6f7eb" HeightRequest="450" CornerRadius="10" Padding="10">
-                <BoxView Color="#393e41" CornerRadius="10">
+                <ScrollView >
+                    <StackLayout x:Name="devicesList" BackgroundColor="#f6f7eb">
 
-                </BoxView>
-            </Frame>
+                    </StackLayout>
+                </ScrollView>
+        </Frame>
         </StackLayout>
 </ContentPage>

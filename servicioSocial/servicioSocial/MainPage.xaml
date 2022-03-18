@@ -9,8 +9,8 @@
                 <StackLayout Spacing="15">
                     <Frame Padding="4" CornerRadius="10" Background="#f6f7eb">
                         <StackLayout Orientation="Horizontal" HorizontalOptions="Center" BackgroundColor="#393e41" Padding="10">
-                            <Label Text="Desconectado" FontSize="20" TextColor="#f6f7eb" BackgroundColor="#393e41" Padding="1" VerticalOptions="Center"></Label>
-                            <ImageButton Source="cancel.png" BackgroundColor="#393e41" HeightRequest="40" WidthRequest="50" CornerRadius="10" Padding="10"></ImageButton>
+                            <Label x:Name="etiquetaContectado" Text="Desconectado" FontSize="20" TextColor="#f6f7eb" BackgroundColor="#393e41" Padding="1" VerticalOptions="Center"></Label>
+                            <ImageButton x:Name="imagenConectado" Source="cancel.png" BackgroundColor="#393e41" HeightRequest="40" WidthRequest="50" CornerRadius="10" Padding="10"></ImageButton>
                         </StackLayout>
                     </Frame>
                     <Frame Padding="1" CornerRadius="10">
@@ -31,8 +31,8 @@
                     </Grid.RowDefinitions>
                     <Label Grid.Row="0" Grid.Column="0" Text="Amplitud" FontSize="18" TextColor="#231f20" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" />
                     <Label Grid.Row="1" Grid.Column="0" Text="Temperatura" FontSize="16" TextColor="#231f20" VerticalOptions="Center" HorizontalOptions="Center"/>
-                    <Label Grid.Row="0" Grid.Column="1" Text="0" FontSize="18" TextColor="#2ca58d" VerticalOptions="Center" HorizontalOptions="Center"/>
-                    <Label Grid.Row="1" Grid.Column="1" Text="0" FontSize="18" TextColor="#f97068" VerticalOptions="Center" HorizontalOptions="Center"/>
+                    <Label x:Name="amplitudValue" Grid.Row="0" Grid.Column="1" Text="0" FontSize="18" TextColor="#2ca58d" VerticalOptions="Center" HorizontalOptions="Center"/>
+                    <Label x:Name="temperaturaValue" Grid.Row="1" Grid.Column="1" Text="0" FontSize="18" TextColor="#f97068" VerticalOptions="Center" HorizontalOptions="Center"/>
                     <Label Grid.Row="0" Grid.Column="2" Text="MM/SEG" FontSize="18" TextColor="#231f20" VerticalOptions="Center" HorizontalOptions="Center"/>
                     <Label Grid.Row="1" Grid.Column="2" Text="°C" FontSize="18" TextColor="#231f20" VerticalOptions="Center" HorizontalOptions="Center"/>
                 </Grid>
