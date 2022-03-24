@@ -47,8 +47,10 @@ namespace servicioSocial
         async void manageBluetoothConection(Equipo equipo)
         {
             await DisplayAlert("Conexion", "Conectado Con Exito!", "OK");
-            //MainPage.changeConectedState(true);
+            MainPage.changeConectedState(true);
+            MainPage.equipo = equipo;
             await Navigation.PopAsync();
+            //await Navigation.PushAsync(new NavigationPage(new MainPage(true, equipo)));
         }
     }
 }

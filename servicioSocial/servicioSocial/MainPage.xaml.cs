@@ -1,4 +1,5 @@
-﻿using System;
+﻿using servicioSocial.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,10 +14,12 @@ namespace servicioSocial
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MainPage : ContentPage
     {
-        static bool conection = false;
+        public static bool conection = false;
+        public static Equipo equipo;
 
         public MainPage()
         {
+            //todo: test
             InitializeComponent();
         }
         public MainPage(bool conected, Models.Equipo equipo)
@@ -25,6 +28,8 @@ namespace servicioSocial
             conection = conected;
 
             manageBluetoothConection(conection);
+
+            DisplayAlert("Alert", "You have been alerted " + equipo, "OK");
 
             int longestSize = equipo.amplitud.Length < equipo.temperatura.Length ? equipo.temperatura.Length : equipo.amplitud.Length;
             
@@ -38,7 +43,7 @@ namespace servicioSocial
             //}
         }
 
-        public void changeConectedState(bool state)
+        public static void changeConectedState(bool state)
         {
             conection = state;
             manageBluetoothConection(conection);
@@ -50,7 +55,7 @@ namespace servicioSocial
             Thread.Sleep(500);
         }
 
-        void manageBluetoothConection(bool con)
+        static void manageBluetoothConection(bool con)
         {
             if (con)
             {
