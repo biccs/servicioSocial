@@ -84,8 +84,10 @@ namespace servicioSocial
             {
                 etiquetaContectado.Text = name;
                 imagenConectado.Source = "checked.png";
-                conectionButton.Text = "Desconectar";
-                conectionButton.Clicked -= DisconnectDevice;
+                //conectionButton.Text = "Desconectar";
+                //conectionButton.Clicked += DisconnectDevice;
+                disconectButton.IsEnabled = true;
+                conectionButton.IsEnabled = false;
             }
             else
             {
@@ -111,6 +113,8 @@ namespace servicioSocial
             {
                 etiquetaContectado.Text = "Desconectado";
                 imagenConectado.Source = "cancel.png";
+                conectionButton.IsEnabled= true;
+                disconectButton.IsEnabled= false;
             }
         }
     

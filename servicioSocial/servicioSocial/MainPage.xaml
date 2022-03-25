@@ -41,7 +41,7 @@
                 <Label Text="Rango ISO10816 -3" TextColor="#f6f7eb" FontSize="18" HorizontalTextAlignment="Center"/>
                 <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
                     <Button FontSize="12" Text="Conectar" Clicked="BluetoothPage" TextColor="#f6f7eb" BorderWidth="2.5" BorderColor="#f6f7eb" BackgroundColor="#393e41" Padding="1" CornerRadius="10" x:Name="conectionButton"/>
-                    <!--<Button FontSize="11" Text="Desconectar"  Clicked="DisconnectDevice" TextColor="#f6f7eb" BorderWidth="2.5" BorderColor="#f6f7eb" BackgroundColor="#393e41" Padding="1" CornerRadius="10"/>-->
+                    <Button IsEnabled="False" FontSize="11" Text="Desconectar"  Clicked="DisconnectDevice" TextColor="#f6f7eb" BorderWidth="2.5" BorderColor="#f6f7eb" BackgroundColor="#393e41" Padding="1" CornerRadius="10" x:Name="disconectButton"/>
                 </StackLayout>
                 <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
                     <Frame Padding="5" CornerRadius="10" BackgroundColor="#f6f7eb" WidthRequest="100">
