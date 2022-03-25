@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace servicioSocial.Models
 {
-    public class Equipo
+    public class Equipo : INotifyPropertyChanged
     {
         public string nombre { get; set; }
         public double equipoId { get; set; }
@@ -22,6 +23,8 @@ namespace servicioSocial.Models
             generarTemperatura();
             generarAmplitud();
         }
+
+        public event PropertyChangedEventHandler PropertyChanged;
 
         public void generarTemperatura()
         {

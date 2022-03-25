@@ -9,7 +9,7 @@
                 <StackLayout Spacing="15">
                     <Frame Padding="4" CornerRadius="10" Background="#f6f7eb">
                         <StackLayout Orientation="Horizontal" HorizontalOptions="Center" BackgroundColor="#393e41" Padding="10">
-                            <Label x:Name="etiquetaContectado" Text="Desconectado" FontSize="20" TextColor="#f6f7eb" BackgroundColor="#393e41" Padding="1" VerticalOptions="Center"></Label>
+                            <Label x:Name="etiquetaContectado" Text="{Binding nombreEquipo}" FontSize="20" TextColor="#f6f7eb" BackgroundColor="#393e41" Padding="1" VerticalOptions="Center"></Label>
                             <ImageButton x:Name="imagenConectado" Source="cancel.png" BackgroundColor="#393e41" HeightRequest="40" WidthRequest="50" CornerRadius="10" Padding="10"></ImageButton>
                         </StackLayout>
                     </Frame>
@@ -40,8 +40,8 @@
                 
                 <Label Text="Rango ISO10816 -3" TextColor="#f6f7eb" FontSize="18" HorizontalTextAlignment="Center"/>
                 <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-                    <Button FontSize="12" Text="Conectar" Clicked="BluetoothPage" TextColor="#f6f7eb" BorderWidth="2.5" BorderColor="#f6f7eb" BackgroundColor="#393e41" Padding="1" CornerRadius="10"/>
-                    <Button FontSize="11" Text="Desconectar"  TextColor="#f6f7eb" BorderWidth="2.5" BorderColor="#f6f7eb" BackgroundColor="#393e41" Padding="1" CornerRadius="10"/>
+                    <Button FontSize="12" Text="Conectar" Clicked="BluetoothPage" TextColor="#f6f7eb" BorderWidth="2.5" BorderColor="#f6f7eb" BackgroundColor="#393e41" Padding="1" CornerRadius="10" x:Name="conectionButton"/>
+                    <!--<Button FontSize="11" Text="Desconectar"  Clicked="DisconnectDevice" TextColor="#f6f7eb" BorderWidth="2.5" BorderColor="#f6f7eb" BackgroundColor="#393e41" Padding="1" CornerRadius="10"/>-->
                 </StackLayout>
                 <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
                     <Frame Padding="5" CornerRadius="10" BackgroundColor="#f6f7eb" WidthRequest="100">

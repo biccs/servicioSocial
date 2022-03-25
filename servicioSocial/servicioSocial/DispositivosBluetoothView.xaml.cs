@@ -13,6 +13,7 @@ namespace servicioSocial
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class DispositivosBluetoothView : ContentPage
     {
+
         public DispositivosBluetoothView()
         {
             InitializeComponent();
@@ -46,11 +47,16 @@ namespace servicioSocial
 
         async void manageBluetoothConection(Equipo equipo)
         {
-            await DisplayAlert("Conexion", "Conectado Con Exito!", "OK");
-            MainPage.changeConectedState(true);
-            MainPage.equipo = equipo;
+            MessagingCenter.Send<DispositivosBluetoothView, Equipo>(this, "Hi", equipo);
             await Navigation.PopAsync();
-            //await Navigation.PushAsync(new NavigationPage(new MainPage(true, equipo)));
+
+            //MainPage main = new MainPage();
+            //await DisplayAlert("Conexion", "Conectado Con Exito!", "OK");
+            //main.conection = true;
+            //main.equipo = equipo;
+            //main.nombreEquipo = equipo.nombre;
+            ////await Navigation.PopAsync();
+            //await Navigation.PushAsync(new NavigationPage(main));
         }
     }
 }
