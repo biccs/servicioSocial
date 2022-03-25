@@ -24,7 +24,6 @@ namespace servicioSocial.Models
             generarAmplitud();
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
 
         public void generarTemperatura()
         {
@@ -44,6 +43,12 @@ namespace servicioSocial.Models
             {
                 this.amplitud[i] = rand.Next(0, 60);
             }
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        void OnPropertyChanged(string value)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(value.ToString()));
         }
     }
 }

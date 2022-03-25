@@ -14,68 +14,109 @@ namespace servicioSocial
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MainPage : ContentPage
     {
-        public bool conection = false;
-        public Equipo equipo;
-        private string _nombreEquipo = "Desconectado";
-        public string nombreEquipo
-        {
-            get
-            {
-                return _nombreEquipo;
-            }
+        public double _amplitud = 0;
+        public double _temperatura = 0;
+        string _conection = "Desconectado";
+        public double Amplitud {
+            get { return _amplitud; }
             set
             {
-                _nombreEquipo = value;
-                // read here about OnPropertyChanged built-in method https://docs.microsoft.com/en-us/dotnet/api/xamarin.forms.bindableobject.onpropertychanged?view=xamarin-forms
-                OnPropertyChanged("nombreEquipo");
+                _amplitud = value;
+                OnPropertyChanged(nameof(Amplitud));
             }
         }
+
+        public double Temperatura
+        {
+            get { return _temperatura; }
+            set
+            {
+                _temperatura = value;
+                OnPropertyChanged(nameof(Temperatura));
+            }
+        }
+
+        public string Conection
+        {
+            get => _conection;
+            set
+            {
+                if (_conection == value)
+                {
+                    return;
+                }
+
+                _conection = value;
+                OnPropertyChanged(nameof(Conection));
+            }
+        }
+
+        public Equipo equipo;
 
         public MainPage()
         {
-            //todo: test
-            // Note: binding context can also to another view model class of this view, but here we will use the class of this specific view
-            // So, you can also do something like that:
-            // BindingContext = new useracViewModel() 
-            BindingContext = this;
-            // you can also change the default value of _TheUserName by getting it from database, xml file etc...
-            //TheUserName = GetCurrentUserName();
-
             InitializeComponent();
+
+            BindingContext = this;
+            //etiquetaContectado.Text = "Desconectado";
+            //amplitudValue.Text = "0";
+            //temperaturaValue.Text = "0";
+            //Conection = "Desconectado";
+            //Amplitud = 0;
+            //Temperatura = 0;
+
             MessagingCenter.Subscribe<DispositivosBluetoothView, Equipo>(this, "Hi", async (sender, arg) =>
             {
+                amplitudValue.BindingContext = this;
+                temperaturaValue.BindingContext = this;
+                
                 manageBluetoothConection(true, arg.nombre);
+                manageDataFlow(arg.temperatura, arg.amplitud);
             });
         }
-        public MainPage(bool conected, Models.Equipo equipo)
+
+        void manageDataFlow(double[] temperatura, double[] amplitud)
         {
-            InitializeComponent();
-            conection = conected;
-
-            manageBluetoothConection(conection, equipo.nombre);
-
-            int longestSize = equipo.amplitud.Length < equipo.temperatura.Length ? equipo.temperatura.Length : equipo.amplitud.Length;
-
-            //while(conection)
-            //{
-            //    for(int i = 0; i < longestSize; i++)
-            //    {
-            //        manageDataFlow(temperaturaValue, equipo.temperatura[i]);
-            //        manageDataFlow(amplitudValue, equipo.amplitud[i]);
-            //    }
-            //}
+            manageTemperatura(temperatura);
+            manageAmplitud(amplitud);
         }
 
-        void changeConectedState(bool state)
+        async void manageTemperatura(double[] temperatura)
         {
-            conection = state;
-            manageBluetoothConection(conection, null);
+            await Task.Run(() =>
+            {
+
+            for (int i = 0; i < 10000; i = i == temperatura.Length - 3 ? 0 : i + 1)
+                {
+                    if(!disconectButton.IsEnabled)
+                        throw new TaskCanceledException();
+
+                    this.Temperatura = temperatura[i];
+                    Thread.Sleep(500);
+                }
+            });
+                
+            //temperaturaValue.SetBinding(Label.TextProperty, temperatura[0].ToString());
+            //this.Temperatura = 50.4;
         }
 
-        void manageDataFlow(Label variableName, double data)
+        async void manageAmplitud(double[] amplitud)
         {
-            variableName.Text = data.ToString();
-            Thread.Sleep(500);
+            await Task.Run(() =>
+            {
+
+                for (int i = 0; i < 1000; i = i == amplitud.Length - 3 ? 0 : i + 1)
+                {
+                    if (!disconectButton.IsEnabled)
+                        throw new TaskCanceledException();
+
+                    this.Amplitud = amplitud[i];
+                    Thread.Sleep(500);
+                }
+            });
+                
+            //amplitudValue.SetBinding(Label.TextProperty, amplitud[0].ToString());
+            //this.Amplitud = 20.3;
         }
 
         void manageBluetoothConection(bool con, string name)
@@ -84,8 +125,6 @@ namespace servicioSocial
             {
                 etiquetaContectado.Text = name;
                 imagenConectado.Source = "checked.png";
-                //conectionButton.Text = "Desconectar";
-                //conectionButton.Clicked += DisconnectDevice;
                 disconectButton.IsEnabled = true;
                 conectionButton.IsEnabled = false;
             }
@@ -113,8 +152,11 @@ namespace servicioSocial
             {
                 etiquetaContectado.Text = "Desconectado";
                 imagenConectado.Source = "cancel.png";
+                this.Amplitud = 0;
+                this.Temperatura = 0;
                 conectionButton.IsEnabled= true;
                 disconectButton.IsEnabled= false;
+                
             }
         }
     
