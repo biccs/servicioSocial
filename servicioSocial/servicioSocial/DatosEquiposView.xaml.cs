@@ -60,8 +60,8 @@ namespace servicioSocial
             InitializeComponent();
             BindingContext = this;
             this.Nombre = equipo.nombre;
-            this.EquipoId = equipo.nombre;
-            this.FechaCreacion = equipo.nombre;
+            this.EquipoId = equipo.equipoId.ToString();
+            this.FechaCreacion = equipo.fechaCreacion.ToString();
         }
     }
 }

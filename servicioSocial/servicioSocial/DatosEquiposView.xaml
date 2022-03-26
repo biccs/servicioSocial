@@ -5,16 +5,10 @@
 
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="HOLA"></Label>
-            <Label Text="{Binding Nombre}"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" ></Label>
-            <Label Text="{Binding EquipoId}"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" ></Label>
-            <Label Text="{Binding FechaCreacion}"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" ></Label>
+            <Label Text="HOLkA"></Label>
+            <Label Text="{Binding Nombre}"></Label>
+            <Label Text="{Binding EquipoId}"></Label>
+            <Label Text="{Binding FechaCreacion}"></Label>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
