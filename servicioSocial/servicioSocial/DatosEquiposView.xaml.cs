@@ -13,12 +13,55 @@ namespace servicioSocial
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class DatosEquiposView : ContentPage
     {
-        private Equipo equipo;
+        private string nombre = String.Empty;
+        private string equipoId = String.Empty;
+        private string fechaCreacion = String.Empty;
+
+        public string Nombre { get => nombre; set {
+                if (nombre == value)
+                {
+                    return;
+                }
+
+                nombre = value;
+                OnPropertyChanged(nameof(Nombre));
+            } }
+
+        public string EquipoId
+        {
+            get => equipoId; set
+            {
+                if (equipoId == value)
+                {
+                    return;
+                }
+
+                nombre = value;
+                OnPropertyChanged(nameof(EquipoId));
+            }
+        }
+
+        public string FechaCreacion
+        {
+            get => fechaCreacion; set
+            {
+                if (fechaCreacion == value)
+                {
+                    return;
+                }
+
+                nombre = value;
+                OnPropertyChanged(nameof(FechaCreacion));
+            }
+        }
 
         public DatosEquiposView(Equipo equipo)
         {
             InitializeComponent();
-            this.equipo = equipo;
+            BindingContext = this;
+            this.Nombre = equipo.nombre;
+            this.EquipoId = equipo.nombre;
+            this.FechaCreacion = equipo.nombre;
         }
     }
 }

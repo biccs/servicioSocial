@@ -72,6 +72,8 @@ namespace servicioSocial
                 
                 manageBluetoothConection(true, arg.nombre);
                 manageDataFlow(arg.temperatura, arg.amplitud);
+
+                equipo = arg;
             });
         }
 
@@ -88,8 +90,8 @@ namespace servicioSocial
 
             for (int i = 0; i < 10000; i = i == temperatura.Length - 3 ? 0 : i + 1)
                 {
-                    if(!disconectButton.IsEnabled)
-                        throw new TaskCanceledException();
+                    if (!disconectButton.IsEnabled)
+                        return;
 
                     this.Temperatura = temperatura[i];
                     Thread.Sleep(500);
@@ -108,7 +110,7 @@ namespace servicioSocial
                 for (int i = 0; i < 1000; i = i == amplitud.Length - 3 ? 0 : i + 1)
                 {
                     if (!disconectButton.IsEnabled)
-                        throw new TaskCanceledException();
+                        return;
 
                     this.Amplitud = amplitud[i];
                     Thread.Sleep(500);
@@ -142,7 +144,7 @@ namespace servicioSocial
 
         async void PropertiesButton(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new EquiposView());
+            await Navigation.PushAsync(new EquiposView(this.equipo));
         }
 
         async void DisconnectDevice(object sender, EventArgs e)
