@@ -28,6 +28,9 @@ namespace servicioSocial
             if (newDevice == null)
             {
                 await DisplayAlert("Cancelado", "No se agrego ningun dispositivo", "OK");
+            } else if(equipoConectado == null)
+            {
+                await DisplayAlert("Cancelado", "Conecte un dispositivo primero!", "OK");
             } else
             {
                 equipoConectado.nombre = newDevice;
@@ -64,9 +67,13 @@ namespace servicioSocial
                 await Navigation.PushAsync(new DatosEquiposView(equipo));
             } else if (action == "Eliminar")
             {
-                this.equipos.Remove(equipo);
-                devicesList.Children.Remove(equipoboton);
-                await DisplayAlert("Notificacion", "Lis Length" + this.equipos.Count , "OK");
+                 string confirmacion = await DisplayActionSheet("Seguro que desea eliminar el equipo?...", "Cancelar", null, "SI"); 
+                if (confirmacion == "SI")
+                {
+                    this.equipos.Remove(equipo);
+                    devicesList.Children.Remove(equipoboton);
+                    await DisplayAlert("Eliminado Exitosamente!","El equipo ha sido eliminado", "OK");
+                }
             }
 
 

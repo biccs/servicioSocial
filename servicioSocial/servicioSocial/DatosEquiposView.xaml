@@ -1,14 +1,23 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="servicioSocial.DatosEquiposView">
+             x:Class="servicioSocial.DatosEquiposView"
+              Title="Detalles de Equipo">
 
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="HOLkA"></Label>
-            <Label Text="{Binding Nombre}"></Label>
-            <Label Text="{Binding EquipoId}"></Label>
-            <Label Text="{Binding FechaCreacion}"></Label>
+    <ContentPage.Content >
+        <StackLayout BackgroundColor="#393e41">
+            <StackLayout HorizontalOptions="Center" Padding="10">
+                <Label Text="Nombre" HorizontalOptions="Center" TextColor="#f6f7eb"></Label>
+                    <Label x:Name="nombreEquipo" Text="{Binding Nombre}" FontSize="20" TextColor="#f97068" HorizontalOptions="Center"></Label>
+                <Label Text="Id" HorizontalOptions="Center"  TextColor="#f6f7eb"></Label>
+                    <Label x:Name="idEquipo" TextColor="#f97068" FontSize="20" Text="{Binding EquipoId}" HorizontalOptions="Center"></Label>
+                <Label Text="Fecha de Creacion" HorizontalOptions="Center" TextColor="#f6f7eb"></Label>
+                    <Label x:Name="fechaCrea" TextColor="#f97068" FontSize="20" Text="{Binding FechaCreacion}" HorizontalOptions="Center"></Label>
+            </StackLayout>
+            <StackLayout>
+                
+                <Button Text="Guardar" HorizontalOptions="Center" FontSize="20" CornerRadius="10" BackgroundColor="LightGreen" TextColor="White"></Button>
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
