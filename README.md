@@ -3,15 +3,13 @@ UI with Xamarin Forms.
 
 # Todo
 # UI
-- Implement Devices screen
-  * Allow device delete
-  * Allow save state on device screen, so devices persist.
-  * Allow device screen on device click
-  - Implement Devices Details Screen
+- Allow save state on device screen, so devices persist.
 
 # Data Storage
 - Coming soon
 - Implement device data storage
+- Store in device with SQLite
+- Create table from DB in UI
 
 # Bluetooth
 - Coming soon
